@@ -5,6 +5,7 @@
         "mongoose":         "latest",
         "express":          "latest",
         "jade":             "latest",
-        "underscore":       "latest"
+        "underscore":       "latest",
+        "backbone":         "latest"
     }
 }
