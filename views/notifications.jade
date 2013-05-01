@@ -1,0 +1,12 @@
+extends page-layout
+block body
+    p= "These are the notifications"
+    ul
+        each model in locals.models
+            li
+                form(method="POST", action="/notification/" + model._id.toString())
+                   p= model.owner + ' ' + model.postId + ' ' + model.title
+                   input(type="hidden", name="_method", value="DELETE")
+                   button(type="Submit")
+                       ="Delete"
+

@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "request":          "latest",
+        "JSONStream":       "latest",
+        "mongoose":         "latest",
+        "express":          "latest",
+        "jade":             "latest",
+        "underscore":       "latest"
+    }
+}

@@ -1,0 +1,50 @@
+block doctype
+    !!!
+html(lang="en")
+    block head
+        head
+            block head-title
+                title= "Hi!"
+            block head-meta
+            block head-css
+            block head-javascripts
+    body
+        include includes/main-nav
+        block body
+            ul
+                each model in locals.models
+                    ul
+                        li
+                            form(method="POST", action="/rule/" + model._id.toString())
+                                input(type="hidden", name="_method", value="PUT")
+                                label= "Rule name"
+                                input(type="text", name="name", value=model.name)
+                                label= "All of:"
+                                input(type="text", name="allOf", value=model.allOf.join(' '))
+                                label= "One of:"
+                                input(type="text", name="oneOf", value=model.oneOf.join(' '))
+                                label= "none of:"
+                                input(type="text", name="noneOf", value=model.noneOf.join(' '))
+                                label= "min score:"
+                                input(type="text", name="minScore", value=model.minScore)
+                                button(type="Submit")
+                                    ="Update"
+                            form(method="POST", action="/rule/" + model._id.toString())
+                                input(type="hidden", name="_method", value="DELETE")
+                                button(type="Submit")
+                                    ="Delete"
+
+
+            form(method="POST")
+                label= "Rule name"
+                input(type="text", name="name")
+                label= "All of:"
+                input(type="text", name="allOf")
+                label= "One of:"
+                input(type="text", name="oneOf")
+                label= "none of:"
+                input(type="text", name="noneOf")
+                label= "min score:"
+                input(type="text", name="minScore")
+                button(type="Submit")
+                    ="Create!"
