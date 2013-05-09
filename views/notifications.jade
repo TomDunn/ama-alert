@@ -4,9 +4,22 @@ block body
     ul
         each model in locals.models
             li
+                p= model.owner + ' ' + model.postId
+                p
+                    a(href=model.url)
+                        =model.title
+                p
+                    a(href="http://www.reddit.com/r/" + model.subreddit)
+                        =model.subreddit
+                
+                if model.over_18
+                    p= "Over 18"
                 form(method="POST", action="/notification/" + model._id.toString())
-                   p= model.owner + ' ' + model.postId + ' ' + model.title
-                   input(type="hidden", name="_method", value="DELETE")
-                   button(type="Submit")
+                    input(type="hidden", name="_method", value="DELETE")
+                    button(type="Submit")
                        ="Delete"
+                form(method="POST", action="/notification/" + model._id.toString())
+                    input(type="hidden", name="_method", value="PUT")
+                    button(type="Submit")
+                        ="Acknowledge"
 

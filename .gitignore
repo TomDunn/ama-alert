@@ -6,9 +6,12 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.swp
 
 pids
 logs
 results
+node_modules/*
+mock.json
 
 npm-debug.log

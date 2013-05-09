@@ -1,44 +1,62 @@
 #!/usr/bin/env node
 
-var JSONStream  = require('JSONStream');
-var request     = require('request');
-var _           = require('underscore');
-var Models      = require('./db.js').Models;
-var RedditLinkCollection = require('./Reddit').RedditLinkCollection;
+var RedditLinkCollection = require('./Reddit').RedditLinkCollection,
+    _                    = require('underscore'),
+    async                = require('async'),
+    linkFilter           = require('./filter-reddit-links');
 
-function checkForAMAs() {
-    var notifications   = [];
-    var linkCollection  = new RedditLinkCollection();
-    request({url: 'http://reddit.com/r/ama.json?limit=100'})
-        .pipe(JSONStream.parse('data.children.*.data'))
-        .on('data', function(chunk) {
-            linkCollection.add(chunk);
-        })
-        .on('end', function() {
-            Models.Rule.find().stream().on('data', function(rule) {
-                notifications = notifications.concat(linkCollection.filter(function(link) {
-                    var words = link.getWords('title');
-                    return  rule.containsOneOf(words)   &&
-                            rule.containsNoneOf(words)  &&
-                            rule.containsAllOf(words)   &&
-                            rule.minScore <= link.get('score');
-                })
-                .map(function(link) {
-                    return {
-                        owner:  rule.owner,
-                        postId: link.get('id'),
-                        title:  link.get('title')
-                    };
-                }));
-            })
-            .on('end', function() {
-                Models.Notification.create(notifications, function(err) {
-                    console.log(err);
-                    return;
-                });
-            });
-        });
+var r = new RedditLinkCollection();
+var getLinks = function(cb) {
+    var prevLength = r.length;
+    var success = function(collection,res,options) {
+        r.getAttr('url').query.after = r.getThingId(r.last().id);
+        console.log(r.length);
+
+        if (prevLength == r.length) {
+            cb('stuck');
+        } else {
+            _.delay(cb,2000);
+        }
+    };
+
+    var error   = function(coll,res,opt) {
+        cb(res);
+    };
+
+    r.fetch({success:success, error:error, remove:false});
 };
 
-checkForAMAs();
-setInterval(checkForAMAs, 40000);
+/* SLOPPY, needs refactored */
+var cs = 0;
+function run() {
+    console.log('Getting links');
+    async.whilst(function() { return r.length < 5000; }, getLinks, function(err) {
+        if (err) {
+            console.log(err);
+            if (err == 'stuck') {
+                var links = r;
+                linkFilter(links);
+                r = new RedditLinkCollection();
+            }
+        } else {
+            console.log('FILTERING');
+            var links = r;
+            linkFilter(links);
+            r = new RedditLinkCollection();
+
+            if (cs == 0) {
+                r.getAttr('url').pathname = 'r/all/new.json';
+                cs = 1;
+            } else if (cs == 1) {
+                r.getAttr('url').pathname = 'r/all/rising.json';
+                cs = 2;
+            } else {
+                cs = 0;
+            }
+        }
+        console.log(r.getAttr('url'));
+        _.delay(run, 5000);
+    });
+}
+
+run();

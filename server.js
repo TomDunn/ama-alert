@@ -58,8 +58,14 @@ app.delete('/rule/:ruleId', function(req,res) {
 });
 
 app.get('/notification', function(req,res) {
-    Models.Notification.find(function(err, models) {
+    Models.Notification.find({ackn: false}).sort({created:-1}).exec(function(err,models) {
         res.render('notifications', {models: models});
+    });
+});
+
+app.put('/notification/:notifId', function(req,res) {
+    Models.Notification.update({_id:req.params.notifId}, {ackn: true}, {multi:false}, function(err,n) {
+        res.redirect('/notification');
     });
 });
 

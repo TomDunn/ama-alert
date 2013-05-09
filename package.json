@@ -6,6 +6,8 @@
         "express":          "latest",
         "jade":             "latest",
         "underscore":       "latest",
+        "jquery":           "latest",
+        "async":            "latest",
         "backbone":         "latest"
     }
 }
