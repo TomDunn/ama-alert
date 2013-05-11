@@ -3,7 +3,7 @@
 var RedditLinkCollection = require('./Reddit').RedditLinkCollection,
     _                    = require('underscore'),
     async                = require('async'),
-    linkFilter           = require('./filter-reddit-links');
+    linkFilter           = require('./filter');
 
 var r = new RedditLinkCollection();
 var getLinks = function(cb) {
@@ -29,7 +29,6 @@ var getLinks = function(cb) {
 /* SLOPPY, needs refactored */
 var cs = 0;
 function run() {
-    console.log('Getting links');
     async.whilst(function() { return r.length < 5000; }, getLinks, function(err) {
         if (err) {
             console.log(err);
@@ -39,7 +38,6 @@ function run() {
                 r = new RedditLinkCollection();
             }
         } else {
-            console.log('FILTERING');
             var links = r;
             linkFilter(links);
             r = new RedditLinkCollection();
