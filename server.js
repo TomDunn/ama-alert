@@ -8,6 +8,7 @@ var express = require('express'),
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+app.use('/static', express.static(__dirname + '/assets/static'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
