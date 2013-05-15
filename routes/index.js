@@ -11,7 +11,7 @@ module.exports = function(app, Models, tokenize) {
 
     function parseRuleBody(req) {
         return {
-            name:     tokenize(req.body.name),
+            name:     req.body.name,
             allOf:    tokenize(req.body.allOf),
             oneOf:    tokenize(req.body.oneOf),
             noneOf:   tokenize(req.body.noneOf),
