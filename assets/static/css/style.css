@@ -10,15 +10,95 @@ body:after {
 body:after {
   clear: both;
 }
+body {
+  background-image: url('/static/img/grey_wash_wall.png');
+}
 article {
   display: inline;
   float: left;
-  width: 72.91666666666666%;
-  margin: 0 1.0416666666666665%;
+  width: 98.75%;
+  margin: 0 0.625%;
 }
-section {
+article ul {
+  display: block;
+  width: 101.25%;
+  margin: 0 -0.625%;
+  *zoom: 1;
+}
+article ul:before,
+article ul:after {
+  content: "";
+  display: table;
+}
+article ul:after {
+  clear: both;
+}
+article ul li {
   display: inline;
   float: left;
-  width: 22.916666666666664%;
-  margin: 0 1.0416666666666665%;
+  width: 18.75%;
+  margin: 0 0.625%;
+  margin-bottom: 5px;
+  margin-top: 3px;
+  background-color: white;
+  border-radius: 2px;
+  background-image: url('/static/img/paper_fibers.png');
+}
+article ul li p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin-bottom: 3px;
+}
+article ul li label {
+  font-weight: bold;
+}
+article ul li label p {
+  font-weight: normal;
+}
+header {
+  display: inline;
+  float: left;
+  width: 98.75%;
+  margin: 0 0.625%;
+  background-color: black;
+}
+header ul {
+  display: block;
+  width: 101.25%;
+  margin: 0 -0.625%;
+  *zoom: 1;
+}
+header ul:before,
+header ul:after {
+  content: "";
+  display: table;
+}
+header ul:after {
+  clear: both;
+}
+header ul li {
+  display: inline;
+  float: left;
+  width: 8.75%;
+  margin: 0 0.625%;
+}
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 300%;
+  }
+  article ul li {
+    display: inline;
+    float: left;
+    width: 98.75%;
+    margin: 0 0.625%;
+    margin-bottom: 10px;
+  }
+  header ul li {
+    display: inline;
+    float: left;
+    width: 98.75%;
+    margin: 0 0.625%;
+  }
 }

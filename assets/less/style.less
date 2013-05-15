@@ -1,14 +1,60 @@
 @import 'grid.less';
 
-@columns:       12;
-@column-width:  60;
-@gutter-width:  20;
-@total-width:   100%;
+@columns:           20;
+@half-columns:      @columns / 2;
+@quarter-columns:   @half-columns / 2;
+@three-q-columns:   @half-columns + @quarter-columns;
+@column-width:      60;
+@gutter-width:      20;
+@total-width:       100%;
 
-article {
-    .column(9);
+body {
+    background-image: url('/static/img/grey_wash_wall.png');
 }
 
-section {
-    .column(3);
+article {
+    .column(20);
+
+    ul {
+        .row(20);
+        li {
+            .column(4,20);
+            margin-bottom:      5px;
+            margin-top:         3px;
+            background-color:   white;
+            border-radius:      2px;
+            background-image:   url('/static/img/paper_fibers.png');
+
+            p {
+                text-overflow:  ellipsis;
+                overflow:       hidden;
+                white-space:    nowrap;
+                width:          100%;
+                margin-bottom:  3px;
+            }
+
+            label {
+                font-weight:    bold;
+                p { font-weight:    normal; }
+            }
+        }
+    }
+}
+
+header {
+    .column(20);
+    background-color: black;
+    ul {
+        .row(20);
+        li {
+            .column(2,20);
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    body { font-size:  300%; }
+    article ul li { .column(20,20); margin-bottom: 10px; }
+    header  ul li { .column(20,20); }
 }
