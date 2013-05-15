@@ -9,11 +9,19 @@ html(lang="en")
             block head-css
                 link(rel="stylesheet", href="/static/css/reset.css")
                 link(rel="stylesheet", href="/static/css/style.css")
+                link(rel="stylesheet", href="/static/css/bootstrap.css")
             block head-javascripts
     body
-        include includes/main-nav
+        include includes/header
         block body
             article
                 include rule/list
-            section
-                include rule/create
+            include rule/create
+        block body-scripts
+            script(type="text/javascript", src="http://code.jquery.com/jquery-2.0.0.min.js")
+            script(type="text/javascript", src="/static/js/bootstrap.min.js")
+            script(type="text/javascript")
+                $('#trigger-create-modal').click(function(e) {
+                    e.preventDefault();
+                    $('#myModal').modal('toggle');
+                });

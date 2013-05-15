@@ -1,22 +1,26 @@
 ul
     each model in locals.models
-        ul
-            li
-                form(method="POST", action="/rule/" + model._id.toString())
-                    input(type="hidden", name="_method", value="PUT")
-                    label= "Rule name"
-                    input(type="text", name="name", value=model.name)
-                    label= "All of:"
-                    input(type="text", name="allOf", value=model.allOf.join(' '))
-                    label= "One of:"
-                    input(type="text", name="oneOf", value=model.oneOf.join(' '))
-                    label= "none of:"
-                    input(type="text", name="noneOf", value=model.noneOf.join(' '))
-                    label= "min score:"
-                    input(type="text", name="minScore", value=model.minScore)
-                    button(type="Submit")
-                        ="Update"
-                form(method="POST", action="/rule/" + model._id.toString())
-                    input(type="hidden", name="_method", value="DELETE")
-                    button(type="Submit")
-                        ="Delete"
+        li
+            form(method="POST", action="/rule/" + model._id.toString())
+                input(type="hidden", name="_method", value="PUT")
+                label= "Rule name"
+                    p
+                        =model.name
+                label= "All of:"
+                    p
+                       =showListOrEmpty(model.allOf, ' ', "<none>")
+                label= "One of:"
+                    p
+                        =showListOrEmpty(model.oneOf, ' ', "<none>")
+                label= "None of:"
+                    p
+                        =showListOrEmpty(model.noneOf, ' ', "<none>")
+                label= "Min-score:"
+                    p
+                        =model.minScore
+                button(type="Submit")
+                    ="Update"
+            form(method="POST", action="/rule/" + model._id.toString())
+                input(type="hidden", name="_method", value="DELETE")
+                button(type="Submit")
+                    ="Delete"
