@@ -1,5 +1,5 @@
 var _       = require('underscore'),
-    Text    = require('../Text'),
+    Natural = require('natural'),
     BB      = require('backbone'),
     url     = require('url');
 
@@ -13,7 +13,10 @@ BB.sync = function() {
     return xhr;
 };
 
-var RedditLink           = require('./Link/model')(BB, Text.tokenize);
+/* set up the tokenizer */
+var tokenizer = new Natural.WordTokenizer();
+
+var RedditLink           = require('./Link/model')(BB, tokenizer.tokenize.bind(tokenizer));
 var RedditLinkCollection = require('./Link/collection')(BB, RedditLink, _, url);
 
 module.exports = {

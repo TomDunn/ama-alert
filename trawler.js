@@ -29,7 +29,7 @@ var getLinks = function(cb) {
 /* SLOPPY, needs refactored */
 var cs = 0;
 function run() {
-    async.whilst(function() { return r.length < 5000; }, getLinks, function(err) {
+    async.whilst(function() { return r.length < 300; }, getLinks, function(err) {
         if (err) {
             console.log(err);
             if (err == 'stuck') {

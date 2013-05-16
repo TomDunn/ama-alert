@@ -1,13 +1,14 @@
 {
-    "dependencies": {
-        "request":          "latest",
-        "JSONStream":       "latest",
-        "mongoose":         "latest",
-        "express":          "latest",
-        "jade":             "latest",
-        "underscore":       "latest",
-        "jquery":           "latest",
-        "async":            "latest",
-        "backbone":         "latest"
-    }
+  "dependencies": {
+    "request": "latest",
+    "JSONStream": "latest",
+    "mongoose": "latest",
+    "express": "latest",
+    "jade": "latest",
+    "underscore": "latest",
+    "jquery": "latest",
+    "async": "latest",
+    "backbone": "latest",
+    "natural": "~0.1.21"
+  }
 }
