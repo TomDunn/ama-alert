@@ -1,9 +1,9 @@
 module.exports = function(BB, Link, _, url) {
 var RedditLinkCollection = BB.Collection.extend({
     model: Link,
-    attrs: {},
 
     initialize: function(options) {
+        this.attrs = {};
         this.setAttr('url', {
             host:       'www.reddit.com',
             protocol:   'http',

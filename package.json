@@ -9,6 +9,8 @@
     "jquery": "latest",
     "async": "latest",
     "backbone": "latest",
-    "natural": "~0.1.21"
+    "natural": "~0.1.21",
+    "optimist": "~0.5.0",
+    "WNdb": "~3.0.1"
   }
 }

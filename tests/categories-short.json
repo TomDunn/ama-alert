@@ -1,0 +1,17 @@
+{
+    "art": [
+        "r/art",
+        "r/pottery"
+    ],
+
+    "sports": [
+        "r/sports",
+        "r/soccer"
+    ],
+
+    "technology": [
+        "r/technology",
+        "r/linux"
+    ]
+
+}
