@@ -1,0 +1,22 @@
+label= "Rule name"
+    p
+        =model.name
+label= "All of:"
+    p
+       =showListOrEmpty(model.allOf, ' ', "<none>")
+label= "One of:"
+    p
+        =showListOrEmpty(model.oneOf, ' ', "<none>")
+label= "None of:"
+    p
+        =showListOrEmpty(model.noneOf, ' ', "<none>")
+label= "Min-score:"
+    p
+        =model.minScore
+form(method="GET", action="/rule/" + model._id.toString())
+    button(type="Submit")
+        ="Edit"
+form(method="POST", action="/rule/" + model._id.toString())
+    input(type="hidden", name="_method", value="DELETE")
+    button(type="Submit")
+        ="Delete"

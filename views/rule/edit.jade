@@ -1,0 +1,19 @@
+extends ../page-layout
+block body
+    article
+        form
+            label= "Rule name"
+                p
+                    input(value=model.name, type="text", name="name")
+            label= "All of:"
+                p
+                   input(value=model.allOf, type="text", name="allOf")
+            label= "One of:"
+                p
+                    input(value=model.oneOf, type="text", name="oneOf")
+            label= "None of:"
+                p
+                    input(value=model.noneOf, type="text", name="noneOf")
+            label= "Min-score:"
+                p
+                    input(value=model.minScore, type="text", name="minScore")

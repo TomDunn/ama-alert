@@ -15,11 +15,11 @@ block body
                         p= "NSFW"
                     else
                         p= "SFW"
-                    form(method="POST", action="/notification/" + model._id.toString())
+                    form(method="POST", action="/notification/" + model._id.toString(), class="hidden")
                         input(type="hidden", name="_method", value="DELETE")
                         button(type="Submit")
                            ="Delete"
-                    form(method="POST", action="/notification/" + model._id.toString())
+                    form(method="POST", action="/notification/" + model._id.toString(), class="hidden")
                         input(type="hidden", name="_method", value="PUT")
                         button(type="Submit")
                             ="Acknowledge"

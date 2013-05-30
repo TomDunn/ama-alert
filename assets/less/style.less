@@ -15,6 +15,10 @@ body {
 article {
     .column(20);
 
+    form {
+        background-color:   white;
+    }
+
     ul {
         .row(20);
         li {
@@ -41,6 +45,21 @@ article {
     }
 }
 
+form {
+    button {
+        width:      100%;
+    }
+}
+
+form.hidden {
+    display:            inline-block;
+    width:              50%;
+
+    button {
+        width:          100%;
+    }
+}
+
 header {
     .column(20);
     background-color: black;
@@ -55,6 +74,10 @@ header {
 @media screen and (max-width: 1000px) {
 
     body { font-size:  300%; }
-    article ul li { .column(20,20); margin-bottom: 10px; }
+    article ul li { .column(20,20); margin-top: 30px; }
     header  ul li { .column(20,20); }
+    form.hidden {
+        button {
+        }
+    }
 }

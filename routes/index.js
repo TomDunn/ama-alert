@@ -1,4 +1,5 @@
 module.exports = function(app, Models, tokenize) {
+
     app.get('/', function(req,res) {
         res.redirect('/rule');
     });
@@ -6,6 +7,12 @@ module.exports = function(app, Models, tokenize) {
     app.get('/rule', function(req,res) {
         Models.Rule.find(function(err, models) {
             res.render('page-layout', {models: models});
+        });
+    });
+
+    app.get('/rule/:ruleId', function(req,res) {
+        Models.Rule.findOne({_id:req.params.ruleId}, function(err,model) {
+            res.render('rule/edit', {model: model});
         });
     });
 
