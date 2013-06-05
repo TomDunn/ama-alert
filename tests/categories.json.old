@@ -2,7 +2,10 @@
     "art": [
         "r/art",
         "r/drawing",
+        "r/artcrit",
+        "r/learnart",
         "r/painting",
+        "r/nsfwart",
         "r/pottery"
     ],
 
@@ -10,6 +13,8 @@
         "r/cars",
         "r/motorcycles",
         "r/cartalk",
+        "r/usercars",
+        "r/carporn",
         "r/auto"
     ],
 
@@ -17,6 +22,8 @@
         "r/books",
         "r/booksuggestions",
         "r/literature",
+        "r/booklists",
+        "r/bookclub",
         "r/bookshelf"
     ],
 
@@ -31,50 +38,24 @@
         "r/cooking",
         "r/food",
         "r/slowcooking",
+        "r/foodporn",
         "r/recipes"
-    ],
-
-    "gaming": [
-        "r/truegaming",
-        "r/games",
-        "r/gaming",
-        "r/gamingsuggestions"
-    ],
-
-    "movies": [
-        "r/movies",
-        "r/videography",
-        "r/screenwriting",
-        "r/flicks"
     ],
 
     "music": [
         "r/music",
         "r/DnB",
         "r/classicalmusic",
+        "r/wearethemusicmakers",
         "r/listentothis"
-    ],
-
-    "philosophy": [
-        "r/philosophy",
-        "r/analyticmetaphysics",
-        "r/askphilosophy",
-        "r/TheAgora"
     ],
 
     "pornography": [
         "r/porn",
         "r/pornvideos",
         "r/gonewild",
-        "r/gentlemenboners",
+        "r/nsfw",
         "r/cumsluts"
-    ],
-
-    "science": [
-        "r/science",
-        "r/RepublicOfScience",
-        "r/ClassicScience",
-        "r/astrophys"
     ],
 
     "software": [
@@ -88,11 +69,15 @@
         "r/sports",
         "r/olympics",
         "r/sportsbook",
+        "r/sportsblogs",
         "r/soccer"
     ],
 
     "technology": [
         "r/technology",
+        "r/geek",
+        "r/Apple",
+        "r/tech",
         "r/linux",
         "r/android",
         "r/gadgets"

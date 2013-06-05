@@ -21,5 +21,6 @@ var RedditLinkCollection = require('./Link/collection')(BB, RedditLink, _, url);
 
 module.exports = {
     RedditLink:             RedditLink,
-    RedditLinkCollection:   RedditLinkCollection
+    RedditLinkCollection:   RedditLinkCollection,
+    Trawler:                require('./trawler')
 };

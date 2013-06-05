@@ -50,8 +50,8 @@ async.series(fetches, function(err, results) {
         return console.log(err);
     }
 
-    var classifier = new natural.BayesClassifier();
-    //var classifier = new natural.LogisticRegressionClassifier();
+    //var classifier = new natural.BayesClassifier();
+    var classifier = new natural.LogisticRegressionClassifier();
     _.each(collections, function(collection) {
 
         console.log(collection.getAttr('category') + ': ' + collection.length);
@@ -61,7 +61,7 @@ async.series(fetches, function(err, results) {
         }
 
         collection.each(function(model) {
-            classifier.addDocument(model.get('title'), collection.getAttr('category'));
+            classifier.addDocument(model.get('title') + ' ' + model.get('selftext'), collection.getAttr('category'));
         });
     });
 

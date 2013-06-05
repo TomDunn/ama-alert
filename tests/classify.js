@@ -20,7 +20,7 @@ Bayes.load('classifier.json', null, function(err,classifier) {
          console.log('Title:\n' + test.text);
          console.log('Tag:\n' + test.tag);
          console.log('Calculated:\n');
-         console.log(classifier.getClassifications(test.text));
+         console.log(classifier.classify(test.text));
          console.log('------------------------------------------------');
     });
 });

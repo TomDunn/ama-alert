@@ -1,101 +1,57 @@
 {
-    "art": [
-        "r/art",
-        "r/drawing",
-        "r/painting",
-        "r/pottery"
+    "discussion_and_stories": [
+        "r/AskReddit+IAmA+bestof+fatpeoplestories+pettyrevenge+TalesFromRetail+DoesAnybodyElse+CrazyIdeas"
     ],
 
-    "auto": [
-        "r/cars",
-        "r/motorcycles",
-        "r/cartalk",
-        "r/auto"
+    "emotional_reaction_fuel": [
+        "r/WTF+aww+cringepics+cringe+JusticePorn+MorbidReality+rage+mildlyinfuriating+creepy+creepyPMs+nosleep+nostalgia"
     ],
 
-    "books": [
-        "r/books",
-        "r/booksuggestions",
-        "r/literature",
-        "r/bookshelf"
+    "entertainment_gaming": [
+        "r/gaming+leagueoflegends+pokemon+Minecraft+starcraft+Games+DotA2+skyrim+tf2+magicTCG+wow+KerbalSpaceProgram+mindcrack+Fallout+roosterteeth+Planetside+gamegrumps+battlefield3+darksouls+masseffect"
     ],
 
-    "cute": [
-        "r/aww",
-        "r/cute",
-        "r/pimpcats",
-        "r/aww_gifs"
+    "entertainment_tv": [
+        "r/arresteddevelopment+gameofthrones+doctorwho+mylittlepony+community+breakingbad+adventuretime+startrek+TheSimpsons+futurama+HIMYM+DunderMifflin+thewalkingdead"
     ],
 
-    "food": [
-        "r/cooking",
-        "r/food",
-        "r/slowcooking",
-        "r/recipes"
+    "entertainment_other": [
+        "r/Music+movies+harrypotter+StarWars+DaftPunk+hiphopheads+anime+comicbooks+geek+batman+TheLastAirbender+Naruto+FanTheories"
     ],
 
-    "gaming": [
-        "r/truegaming",
-        "r/games",
-        "r/gaming",
-        "r/gamingsuggestions"
+    "humor": [
+        "r/funny+AdviceAnimals+fffffffuuuuuuuuuuuu+4chan+ImGoingToHellForThis+firstworldanarchists+circlejerk+MURICA+facepalm+Jokes+wheredidthesodago+polandball+TrollXChromosomes+comics+nottheonion+britishproblems+TumblrInAction+onetruegod"
     ],
 
-    "movies": [
-        "r/movies",
-        "r/videography",
-        "r/screenwriting",
-        "r/flicks"
+    "image_gif_vid": [
+        "r/pics+videos+gifs+reactiongifs+mildlyinteresting+woahdude+FiftyFifty+FoodPorn+HistoryPorn+wallpapers+youtubehaiku+Unexpected+photoshopbattles+AnimalsBeingJerks+cosplay+EarthPorn+QuotesPorn+awwnime+AbandonedPorn+carporn+PerfectTiming+OldSchoolCool+RoomPorn+Pareidolia+MapPorn+tumblr+techsupportgore+PrettyGirls+itookapicture"
     ],
 
-    "music": [
-        "r/music",
-        "r/DnB",
-        "r/classicalmusic",
-        "r/listentothis"
+    "learning_and_thinking": [
+        "r/todayilearned+science+askscience+space+AskHistorians+YouShouldKnow+explainlikeimfive"
     ],
 
-    "philosophy": [
-        "r/philosophy",
-        "r/analyticmetaphysics",
-        "r/askphilosophy",
-        "r/TheAgora"
+    "lifestyle_and_help": [
+        "r/trees+MakeupAddiction+cats+LifeProTips+RedditLaqueristas+Random_Acts_Of_Amazon+food+guns+tattoos+corgi+teenagers+GetMotivated+motorcycles+sex+progresspics+DIY+bicycling+Fitness+lifehacks+longboarding+Frugal+drunk+Art+loseit+Military"
     ],
 
-    "pornography": [
-        "r/porn",
-        "r/pornvideos",
-        "r/gonewild",
-        "r/nsfw",
-        "r/cumsluts"
+    "news_and_issues": [
+        "r/politics+worldnews+news+conspiracy+Libertarian+TrueReddit+Conservative+offbeat"
     ],
 
-    "science": [
-        "r/science",
-        "r/RepublicOfScience",
-        "r/ClassicScience",
-        "r/astrophys"
+    "places": [
+        "r/canada+toronto+australia+unitedkingdom"
     ],
 
-    "software": [
-        "r/programming",
-        "r/gamedev",
-        "r/webdev",
-        "r/coding"
+    "race_gender_identity": [
+        "r/atheism+TwoXChromosomes+MensRights+gaybros+lgbt"
     ],
 
     "sports": [
-        "r/sports",
-        "r/olympics",
-        "r/sportsbook",
-        "r/soccer"
+        "r/nba+soccer+hockey+nfl+formula1+baseball+MMA+SquaredCircle"
     ],
 
     "technology": [
-        "r/technology",
-        "r/linux",
-        "r/android",
-        "r/gadgets"
+        "r/technology+Android+Bitcoin+programming+apple"
     ]
-
 }
