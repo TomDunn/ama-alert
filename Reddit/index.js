@@ -5,6 +5,37 @@ var _       = require('underscore'),
 
 BB.$        = require('jquery');
 
+/* add deep cloning to underscore https://gist.github.com/echong/3861963 */
+var deepClone = function(obj) {
+    var func, isArr;
+    if (!_.isObject(obj) || _.isFunction(obj)) {
+        return obj;
+    }
+
+    if (_.isDate(obj)) {
+        return new Date(obj.getTime());
+    }
+
+    if (_.isRegExp(obj)) {
+        return new RegExp(obj.source, obj.toString().replace(/.*\//, ""));
+    }
+
+    isArr = _.isArray(obj || _.isArguments(obj));
+    func = function(memo, value, key) {
+        if (isArr) {
+            memo.push(deepClone(value));
+        } else {
+            memo[key] = deepClone(value);
+        }
+        return memo;
+    };
+    return _.reduce(obj, func, isArr ? [] : {});
+};
+
+_.mixin({
+    deepClone: deepClone
+});
+
 /* extend the basic backbone collection further */
 require('./base-collection')(BB, _, url);
 
@@ -24,7 +55,8 @@ var RedditLink           = require('./Link/model')(BB, tokenizer.tokenize.bind(t
 var RedditLinkCollection = require('./Link/collection')(BB, RedditLink, _, url);
 
 /* Comments */
-var CommentCollection = require('./Comment/collection')(BB, _);
+var Comment = require('./Comment/model')(BB);
+var CommentCollection = require('./Comment/collection')(BB, _, Comment);
 
 module.exports = {
     RedditLink:             RedditLink,

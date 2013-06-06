@@ -1,5 +1,6 @@
-module.exports = function(BB, _) {
+module.exports = function(BB, _, Comment) {
     return BB.Collection.extend({
+        model: Comment,
 
         initialize: function(opts) {
             BB.Collection.prototype.initialize.call(this,opts);
@@ -23,6 +24,10 @@ module.exports = function(BB, _) {
                 normalize(child.data);
                 return child.data;
             });
+
+            if (response.length === 0) {
+                console.log("No comments found for post");
+            }
 
             return response;
         },
