@@ -19,11 +19,16 @@ BB.sync = function() {
 /* set up the tokenizer */
 var tokenizer = new Natural.WordTokenizer();
 
+/* Links */
 var RedditLink           = require('./Link/model')(BB, tokenizer.tokenize.bind(tokenizer));
 var RedditLinkCollection = require('./Link/collection')(BB, RedditLink, _, url);
+
+/* Comments */
+var CommentCollection = require('./Comment/collection')(BB, _);
 
 module.exports = {
     RedditLink:             RedditLink,
     RedditLinkCollection:   RedditLinkCollection,
+    CommentCollection:      CommentCollection,
     Trawler:                require('./trawler')
 };
