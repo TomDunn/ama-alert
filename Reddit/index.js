@@ -5,6 +5,9 @@ var _       = require('underscore'),
 
 BB.$        = require('jquery');
 
+/* extend the basic backbone collection further */
+require('./base-collection')(BB, _, url);
+
 /* override the sync method to send additional headers */
 BB.origSync = BB.sync;
 BB.sync = function() {

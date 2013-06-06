@@ -11,6 +11,7 @@
     "backbone": "latest",
     "natural": "~0.1.21",
     "optimist": "~0.5.0",
-    "WNdb": "~3.0.1"
+    "WNdb": "~3.0.1",
+    "lazy": "~1.0.11"
   }
 }
